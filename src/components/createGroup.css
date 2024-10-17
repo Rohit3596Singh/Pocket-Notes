@@ -1,0 +1,67 @@
+/* #createGroup-popup{
+    position: absolute;
+    margin-top: 50%;
+    margin-left: 50%;
+    height: 50vh;
+    width: 50vw;
+    background-color: #ab5f5f;
+}
+
+body.active-modal {
+    overflow-y: hidden;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#createGroup-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50vh;
+    width: 50vw;
+    background-color: #759bce;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+  flex-direction: column;
+  }
+  
+  body.active-modal {
+    overflow-y: hidden;
+  }
+  
+
+
+  #createGroup{
+    position: absolute;
+    bottom: 5%;
+    right: 77vw;
+    height: 13vh;
+    width: 6vw;
+}
+
+
+
+/* #closeBTN{
+  position: absolute;
+  margin-right: 5%;
+  margin-bottom: 5%;
+} */
