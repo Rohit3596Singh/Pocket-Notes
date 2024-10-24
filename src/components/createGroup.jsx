@@ -4,7 +4,7 @@ import "./createGroup.css";
 import Group from '../images/Group.png';
 import { json, Link } from 'react-router-dom';
 
-const CreateGroup = () => {
+const CreateGroup = (onSendData) => {
   const [modal, setModal] = useState(false);
   const [group,setGroup]=useState([])
   const [groupName,setGroupName] = useState("")
@@ -39,7 +39,7 @@ const CreateGroup = () => {
     
     
     if(newName){
-      let obj={groupName:"",notes:""}
+      let obj={groupName:newName,notes:""}
       const updatedArray=[...group,obj];
       setGroup(updatedArray);
       localStorage.setItem("group",JSON.stringify(updatedArray))
@@ -51,9 +51,16 @@ const CreateGroup = () => {
       // const updatedGroup={...group,newName}
       // localStorage.setItem("group",JSON.stringify(group))
       data.current.value="";
+      onSendData(groupdatedArrayup);
       setGroupName("");
       //
     }
+
+    // //send data to parent via callback
+    // const sendDataToParent=()=>{
+    //   onSendData(group);
+    // }
+
     // if (data.current) {
     //   console.log(data.current.value); // Logs the input value
     //   localStorage.setItem("inputValue", data.current.value); // Stores it in localStorage

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -9,13 +9,21 @@ import Home from './components/Home'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 function App() {
+
+  const [group, setGroup] = useState([])
   
   const router = createBrowserRouter([
     {
       path:"/",
-      element:<><Home/><createGroup/></>
+      element:<><Home/><CreateGroup/></>
     }
   ])
+
+  //callback function to recieve data from child
+
+  const handledataFromChild =(group)=>{
+    setGroup(group)
+  }
 
   return (
     <>
@@ -24,7 +32,14 @@ function App() {
 
         <div id="pocketNotes-Groups" >
           <h3 id="heading-PocketNotes">Pocket Notes</h3>
-          
+          <CreateGroup onSendData={handledataFromChild}/>{/*yaha pr file ka nam dalu ya function ka eg:- createGroup*/}
+          <div id="groupName">
+            <ul>
+              {group.map((item, index)=>(
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          </div>
         </div>
 
 
